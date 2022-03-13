@@ -44,7 +44,7 @@ help()
 	echo "Használat: ./fileuploader.sh [opció] <argumentum>\n"
 	echo "Kapcsolók: -u [elérési út]: fájl feltöltése\n"
 	echo "           -d [link]: fájl letöltése anonfiles.com-ról\n"
-	echo "           -h: Ezen segítség megjelentítése."
+	echo "           -h: Ezen segítség megjelenítése."
 
 }
 
