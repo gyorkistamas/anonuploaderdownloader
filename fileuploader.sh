@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 uploadfile()
@@ -9,33 +9,33 @@ uploadfile()
 		return 0
     fi
 
-    curl --silent -F "file=@$1" https://api.anonfiles.com/upload > .temp.txt
+    curl --silent -F "file=@$1" https://api.anonfiles.com/upload > /tmp/filetemp.txt
 
-	STATE=$(jq .status .temp.txt)
+	STATE=`jq .status /tmp/filetemp.txt`
 
     if [ "$STATE" = "true" ]; then
-		echo "\nSikeres fájfeltöltés.\n"
-		LINK=$(jq .data.file.url.short .temp.txt | sed 's/"//g')
+		echo -e "Sikeres fájfeltöltés."
+		LINK=`jq .data.file.url.short /tmp/filetemp.txt | sed 's/"//g'`
 		echo "Link: $LINK"
 	else
-		ERROR=jq .error.message .temp.txt
+		ERROR=`jq .error.message /tmp/filetemp.txt`
 		echo "Hiba a feltöltés során: $ERROR"
 	fi
 
 
-	rm .temp.txt
+	rm /tmp/filetemp.txt
 }
 
 
 downloadfile()
 {
-	curl --silent $1 > .temp.txt
+	curl --silent $1 > /tmp/filetemp.txt
 
-	LINK=$(cat .temp.txt | grep "https://cdn-" | cut -d\" -f2)
+	LINK=`cat /tmp/filetemp.txt | grep "https://cdn-" | cut -d\" -f2`
 
 	wget $LINK
 
-	rm .temp.txt
+	rm /tmp/filetemp.txt
 }
 
 help()
