@@ -5,7 +5,7 @@ uploadfile()
 {
 
     if  [ ! -f "$1" ]; then
-		echo "A fájl nem létezik/nem található."
+		echo "A fájl nem létezik vagy nem található."
 		return 0
     fi
 
