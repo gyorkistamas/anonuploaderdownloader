@@ -14,7 +14,7 @@ uploadfile()
 	STATE=`jq .status /tmp/filetemp.txt`
 
     if [ "$STATE" = "true" ]; then
-		echo -e "Sikeres fájfeltöltés."
+		echo -e "Sikeres fájfeltöltés!"
 		LINK=`jq .data.file.url.short /tmp/filetemp.txt | sed 's/"//g'`
 		echo "Link: $LINK"
 	else
