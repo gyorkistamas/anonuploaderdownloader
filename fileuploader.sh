@@ -40,10 +40,10 @@ downloadfile()
 
 help()
 {
-	echo "fileuploader - Gyors fájfeltöltés anonfiles.com-ra\n"
-	echo "Használat: ./fileuploader.sh [opció] <argumentum>\n"
-	echo "Kapcsolók: -u [elérési út]: fájl feltöltése\n"
-	echo "           -d [link]: fájl letöltése anonfiles.com-ról\n"
+	echo "fileuploader - Gyors fájfeltöltés anonfiles.com-ra"
+	echo "Használat: ./fileuploader.sh [opció] <argumentum>"
+	echo "Kapcsolók: -u [elérési út]: fájl feltöltése"
+	echo "           -d [link]: fájl letöltése anonfiles.com-ról"
 	echo "           -h: Segítség megjelenítése."
 
 }
